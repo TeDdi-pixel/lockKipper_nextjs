@@ -7,6 +7,8 @@ type Props = {
   endIcon?: ReactNode;
   fullwidth?: boolean;
   fontSize?: string;
+  type?: "submit" | "button";
+  onClick?: () => void;
 };
 
 export const SubmitButton = ({
@@ -15,13 +17,16 @@ export const SubmitButton = ({
   endIcon,
   fullwidth = true,
   fontSize,
+  onClick,
+  type = "button",
 }: Props) => {
   return (
     <Button
-      type="submit"
+      type={type}
       variant={variant}
       className={`${variant === "contained" ? "bg-primary" : ""}`}
       endIcon={endIcon}
+      onClick={type === "button" ? onClick : undefined}
       fullWidth={fullwidth}
     >
       <Typography sx={{ fontSize: fontSize }}>{text}</Typography>

@@ -5,12 +5,20 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { UseFormRegister } from "react-hook-form";
+import { TypeSignIn } from "..";
 
-export const RememberCheckbox = () => {
+export const RememberCheckbox = ({
+  register,
+  status,
+}: {
+  register: UseFormRegister<TypeSignIn>;
+  status: boolean;
+}) => {
   return (
     <FormGroup>
       <FormControlLabel
-        control={<Checkbox />}
+        control={<Checkbox {...register("rememberEmail")} checked={status} />}
         label={
           <Typography sx={{ fontWeight: "500" }}>Remember email</Typography>
         }

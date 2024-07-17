@@ -1,8 +1,14 @@
-import React, { ReactNode } from "react";
+import React, { FormEventHandler, ReactNode } from "react";
 
-const RegForm = ({ children}: { children: ReactNode }) => {
+const RegForm = ({
+  children,
+  onSubmit,
+}: {
+  children: ReactNode;
+  onSubmit: FormEventHandler<HTMLFormElement>;
+}) => {
   return (
-    <form className="max-w-[350px] w-full border border-border rounded pt-[30px] px-[21px] pb-[21px] flex flex-col gap-[15px] font-montserrat">
+    <form onSubmit={onSubmit} className="max-w-[350px] w-full border border-border rounded pt-[30px] px-[21px] pb-[21px] flex flex-col gap-[15px] font-montserrat">
       {children}
     </form>
   );

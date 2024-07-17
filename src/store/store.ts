@@ -1,11 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import signInSlice from "./features/signIn/signInSlice";
 
 export const makeStore = (preloadedState = {}) => {
   return configureStore({
-    reducer: {
-      signInSlice: signInSlice,
-    },
+    reducer: {},
     preloadedState,
   });
 };
