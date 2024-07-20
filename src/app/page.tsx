@@ -1,5 +1,5 @@
-import { HomePage } from "../pages/home";
+import { VaultPage } from "@/pages/vault";
 
 export default function Home() {
-  return <HomePage />;
+  return <VaultPage />;
 }

@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { EmailField } from "./EmailField";
 import { RememberCheckbox } from "./RememberCheckbox";
 import { SubmitButton } from "@/shared/ui/SubmitButton";
 import { UseFormRegister } from "react-hook-form";
-import { TypeSignIn } from "..";
+import { EmailField } from "./EmailField";
+import { TypeSignIn } from "./types/types";
 
 type Props = {
   rememberEmail: boolean;

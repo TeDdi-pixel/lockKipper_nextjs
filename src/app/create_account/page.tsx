@@ -1,7 +1,8 @@
+import { RegisterPage } from "@/pages/register";
 import React from "react";
 
-const page = () => {
-  return <div>Create account page</div>;
+const Register = () => {
+  return <RegisterPage />;
 };
 
-export default page;
+export default Register;

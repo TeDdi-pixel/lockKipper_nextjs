@@ -2,7 +2,7 @@ import React from "react";
 import { PasswordField } from "./PasswordField";
 import { SubmitButton } from "@/shared/ui/SubmitButton";
 import { UseFormRegister } from "react-hook-form";
-import { TypeSignIn } from "..";
+import { TypeSignIn } from ".";
 
 type Props = {
   register: UseFormRegister<TypeSignIn>;
