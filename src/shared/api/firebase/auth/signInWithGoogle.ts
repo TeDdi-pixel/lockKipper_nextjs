@@ -2,6 +2,7 @@
 
 import { SignInResult } from "@/features/auth/ui/types/types";
 import { auth, db, googleProvider } from "@/lib/firebase/config";
+import { TypeUser } from "@/shared/types/user";
 import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import Cookies from "js-cookie";
@@ -28,15 +29,7 @@ export const signInWithGoogle = async (): Promise<SignInResult> => {
       };
       await setDoc(docRef, firebaseUser);
     } else {
-      const data = docSnap.data();
-      firebaseUser = {
-        uid: user.uid,
-        email: data.email ?? null,
-        password: data.password ?? null,
-        displayName: data.displayName ?? null,
-        hint: data.hint ?? null,
-        photoURL: data.photoURL ?? null,
-      };
+      firebaseUser = docSnap.data() as TypeUser;
     }
 
     Cookies.set("user", JSON.stringify(firebaseUser));

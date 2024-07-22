@@ -31,6 +31,7 @@ export const signInWithEmail = async (
       email: user.email,
       photoURL: user.photoURL,
       password: data.password,
+      hint: null,
     };
 
     if (!updatedUser) throw Error("No user found");

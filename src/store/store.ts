@@ -3,7 +3,7 @@ import userSlice from "./features/user/userSlice";
 
 export const makeStore = (preloadedState = {}) => {
   return configureStore({
-    reducer: { userSlice: userSlice },
+    reducer: { user: userSlice },
     preloadedState,
   });
 };

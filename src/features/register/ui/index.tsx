@@ -1,10 +1,7 @@
 "use client";
 
 import { showError } from "@/helpers/notify";
-import { theme } from "@/shared/config/theme";
 import { SubmitButton } from "@/shared/ui/SubmitButton";
-import { ThemeProvider } from "@mui/material";
-import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import EmailField from "./EmailField";
 import { DisplayNameField } from "./DisplayNameField";
@@ -35,20 +32,18 @@ export const RegisterForm = () => {
     }
   };
   return (
-    <ThemeProvider theme={theme}>
-      <RegForm onSubmit={handleSubmit(onSubmit)}>
-        <EmailField register={register} />
-        <DisplayNameField register={register} />
-        <PasswordField register={register} />
-        <ProvePasswordField register={register} />
-        <HintField register={register} />
-        <SubmitButton text="Create account" type="submit" />
-        <CreateAccountLine
-          text="Already have an account?"
-          buttonText="Log in"
-          direction="/sign_in"
-        />
-      </RegForm>
-    </ThemeProvider>
+    <RegForm onSubmit={handleSubmit(onSubmit)}>
+      <EmailField register={register} />
+      <DisplayNameField register={register} />
+      <PasswordField register={register} />
+      <ProvePasswordField register={register} />
+      <HintField register={register} />
+      <SubmitButton text="Create account" type="submit" />
+      <CreateAccountLine
+        text="Already have an account?"
+        buttonText="Log in"
+        direction="/sign_in"
+      />
+    </RegForm>
   );
 };

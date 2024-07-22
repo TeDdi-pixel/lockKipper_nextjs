@@ -1,6 +1,5 @@
-import React from "react";
 import { TypeCustomTextField, TypeRegisterForm } from "./types/types";
-import { CustomTextField } from "@/shared/ui/layout/CustomTextField";
+import { CustomTextField } from "@/shared/ui/CustomTextField";
 
 export const ProvePasswordField = ({
   register,

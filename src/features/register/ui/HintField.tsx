@@ -1,4 +1,4 @@
-import { CustomTextField } from "@/shared/ui/layout/CustomTextField";
+import { CustomTextField } from "@/shared/ui/CustomTextField";
 import { TypeCustomTextField, TypeRegisterForm } from "./types/types";
 
 export const HintField = ({

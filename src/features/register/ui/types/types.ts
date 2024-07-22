@@ -8,6 +8,6 @@ export type TypeRegisterForm = {
   email: string;
   password: string;
   displayName: string;
-  hint?: string | null;
+  hint: string | null;
   provePassword: string;
 };

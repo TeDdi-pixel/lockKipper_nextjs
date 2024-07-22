@@ -1,7 +1,5 @@
 "use client";
 
-import { theme } from "@/shared/config/theme";
-import { ThemeProvider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import Cookies from "js-cookie";
@@ -9,14 +7,14 @@ import { showError, warn } from "@/helpers/notify";
 import { signInWithEmail } from "@/shared/api/firebase/auth/signInWithEmail";
 import { EmailBlock } from "./EmailBlock";
 import { PasswordBlock } from "./PasswordBlock";
-import SignInWithGoogle from "@/features/signInWithGoogle";
 import { useRouter } from "next/navigation";
 import { RegForm } from "@/shared/ui/RegForm";
 import { TypeSignIn } from "./types/types";
 import { useAppDispatch } from "@/store/hooks";
-import { setUser } from "@/store/features/user/userSlice";
+import { setProfilePhoto, setUser } from "@/store/features/user/userSlice";
 import { signInWithGoogle } from "@/shared/api/firebase/auth/signInWithGoogle";
 import CreateAccountLine from "@/shared/ui/CreateAccountLine";
+import { SignInWithGoogle } from "./SignInWithGoogle";
 
 export const SignInForm = () => {
   const router = useRouter();
@@ -52,7 +50,10 @@ export const SignInForm = () => {
   const authWithGoogle = async () => {
     const { redirectTo, user } = await signInWithGoogle();
 
-    if (user) dispatch(setUser(user));
+    if (user) {
+      dispatch(setUser(user));
+      dispatch(setProfilePhoto(user.photoURL));
+    }
     if (redirectTo) router.replace(redirectTo);
   };
 
@@ -67,25 +68,24 @@ export const SignInForm = () => {
     setValue("email", Cookies.get("rememberedEmail") ?? "");
     setValue("rememberEmail", !!Cookies.get("rememberedEmail"));
   }, []);
+
   return (
-    <ThemeProvider theme={theme}>
-      <RegForm onSubmit={handleSubmit(onSubmit)}>
-        {!emailEntered ? (
-          <EmailBlock
-            register={register}
-            rememberEmail={rememberEmail}
-            goToPassword={goToPassword}
-          />
-        ) : (
-          <PasswordBlock register={register} />
-        )}
-        <SignInWithGoogle onClick={authWithGoogle} />
-        <CreateAccountLine
-          text="New around here?"
-          buttonText="Create account"
-          direction="/create_account"
+    <RegForm onSubmit={handleSubmit(onSubmit)}>
+      {!emailEntered ? (
+        <EmailBlock
+          register={register}
+          rememberEmail={rememberEmail}
+          goToPassword={goToPassword}
         />
-      </RegForm>
-    </ThemeProvider>
+      ) : (
+        <PasswordBlock register={register} />
+      )}
+      <SignInWithGoogle onClick={authWithGoogle} />
+      <CreateAccountLine
+        text="New around here?"
+        buttonText="Create account"
+        direction="/create_account"
+      />
+    </RegForm>
   );
 };

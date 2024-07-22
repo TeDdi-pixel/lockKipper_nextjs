@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { montserrat } from "./fonts";
 import StoreProvider from "@/store/StoreProvider";
 import { ToastContainer } from "react-toastify";
+import ClientThemeProvider from "./providers/ClientThemeProvider";
 
 export default function RootLayout({
   children,
@@ -12,7 +13,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} text-[14px]`}>
         <StoreProvider>
-          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+          <AppRouterCacheProvider>
+            <ClientThemeProvider>{children}</ClientThemeProvider>
+          </AppRouterCacheProvider>
           <ToastContainer />
         </StoreProvider>
       </body>

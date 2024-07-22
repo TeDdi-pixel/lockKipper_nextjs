@@ -10,9 +10,9 @@ export const EntryTiltle = ({ text }: { text: string }) => {
         <Text tag="h1" className="text-primary sm:text-[44px] text-[33px]">
           Lock
           {""}
-          <span>
-            <strong>Kipper</strong>
-          </span>
+          <Text tag="span" className="font-bold">
+            Kipper
+          </Text>
         </Text>
       </div>
       <Text className="text-[21px] font-medium">{text}</Text>
