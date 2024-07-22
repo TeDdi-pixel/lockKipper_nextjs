@@ -50,12 +50,12 @@ const ToggleList = ({ data, title, status = true }: Props) => {
           }}
         >
           <Link
+            href={`/vaults/${item.pathname}`}
             className={`flex items-center gap-[10px] ${
               pathname === `/vaults/${item.pathname}`
                 ? "text-primary font-bold"
                 : ""
             } `}
-            href={`/vaults/${item.pathname}`}
           >
             <Text tag="span" className="text-[18px]">
               {item.icon}
