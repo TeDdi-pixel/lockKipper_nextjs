@@ -11,7 +11,7 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} text-[14px]`}>
+      <body className={`${montserrat.className} text-[14px] bg-background`}>
         <StoreProvider>
           <AppRouterCacheProvider>
             <ClientThemeProvider>{children}</ClientThemeProvider>

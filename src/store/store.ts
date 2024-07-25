@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./features/user/userSlice";
+import settingsSlice from "./features/settings/settingsSlice";
 
 export const makeStore = (preloadedState = {}) => {
   return configureStore({
-    reducer: { user: userSlice },
+    reducer: { user: userSlice, settings: settingsSlice },
     preloadedState,
   });
 };

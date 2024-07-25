@@ -39,7 +39,7 @@ const ToggleList = ({ data, title, status = true }: Props) => {
       {data.map((item) => (
         <li
           key={item.id}
-          className={`flex items-center gap-[10px] text-foreground relative hover:text-primary cursor-pointer${
+          className={`flex items-center gap-[10px] text-primary-foreground relative hover:text-primary cursor-pointer${
             active
               ? "z-0 opacity-100 h-[25px] max-h-[25px] translate-y-[6px]"
               : "z-[-100] opacity-0 h-[0px] max-h-[0px] translate-y-[0px]"

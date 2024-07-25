@@ -7,7 +7,7 @@ export const Trash = () => {
       style={{
         transition: "color ease 0.1s",
       }}
-      className="flex items-center gap-[10px] pt-[10px] cursor-pointer hover:text-primary"
+      className="flex items-center gap-[10px] pt-[10px] cursor-pointer hover:text-primary text-primary-foreground"
     >
       <FaRegTrashCan className="text-[18px]" />
       <span>Trash</span>
