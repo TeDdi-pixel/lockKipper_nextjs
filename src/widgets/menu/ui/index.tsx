@@ -17,8 +17,8 @@ export const Menu = () => {
   };
 
   return (
-    <div className="max-w-[230px] w-full bg-primary h-[100vh]">
-      <ul className="">
+    <div className="max-w-[230px] w-full bg-primary h-[100vh] fixed top-0 left-0">
+      <ul>
         <LogoItem />
         {menuList.map((item) => {
           const isActive = activeOptions.includes(item.id);

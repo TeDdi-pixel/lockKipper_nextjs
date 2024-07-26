@@ -12,7 +12,7 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
     <header className="flex justify-between items-center h-[45px] mb-[30.5px] relative">
       {children}
       <ProfilePhoto
-        path={"/text-image2.jpg"}
+        path={"/photo_2024-04-18_12-10-09.jpg"}
         width={45}
         height={45}
         onClick={() => dispatch(setSettings(!status))}

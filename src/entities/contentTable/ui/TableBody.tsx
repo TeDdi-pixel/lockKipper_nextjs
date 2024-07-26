@@ -13,7 +13,7 @@ const TableBody = ({ data, checkedItems, handleSelectCheckbox }: TypeProps) => {
   return (
     <tbody>
       {data.map((cell) => (
-        <tr key={cell.id} className="h-[30px] first:border-t-0 border-t border-border">
+        <tr key={cell.id} className="h-[30px] first:border-t-0 border-t border-border self-center">
           <td className={bodyRowCell}>
             <Checkbox
               size="small"

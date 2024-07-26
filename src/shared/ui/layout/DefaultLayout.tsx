@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex w-full">
       <Menu />
-      <div className="flex flex-col w-full p-[21px]">
+      <div className="flex flex-col w-full p-[21px] ml-[230px]">
         <Header />
         <Main>
           <Filters />
