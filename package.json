@@ -21,6 +21,7 @@
     "@mui/material-nextjs": "^5.16.4",
     "@reduxjs/toolkit": "^2.2.6",
     "@tailwindcss/typography": "^0.5.13",
+    "cookie": "^0.6.0",
     "firebase": "^10.12.4",
     "glob": "^11.0.0",
     "inflight": "^1.0.6",
@@ -36,6 +37,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/cookie": "^0.6.0",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",

@@ -8,6 +8,7 @@ import React, { ReactNode } from "react";
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
   const { status } = useAppSelector((state) => state.settings);
+
   return (
     <header className="flex justify-between items-center h-[45px] mb-[30.5px] relative">
       {children}

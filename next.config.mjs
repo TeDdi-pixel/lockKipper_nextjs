@@ -4,10 +4,13 @@ const nextConfig = {
         return [
           {
             source: '/',
-            destination: '/@vaults/my_vault',
+            destination: '/vaults/my_vault',
             permanent: true,
           },
         ];
+      },
+      images: {
+        domains: ['firebasestorage.googleapis.com']
       },
 };
 
